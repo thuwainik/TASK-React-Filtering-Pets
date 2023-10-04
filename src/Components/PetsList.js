@@ -4,7 +4,7 @@ import PetItem from "./PetItem";
 
 function PetsList() {
   const [query, setQuery] = useState("");
-  const [type, setType] = useState();
+  const [type, setType] = useState("");
   const petList = pets
     .filter(
       (pet) =>
