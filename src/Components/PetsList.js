@@ -1,6 +1,8 @@
 import { useState } from "react";
 import pets from "../petsData";
 import PetItem from "./PetItem";
+import Searchbar from "./Searchbar";
+import Selectorcode from "./Selectorcode";
 
 function PetsList() {
   const [query, setQuery] = useState("");
@@ -22,33 +24,10 @@ function PetsList() {
               <h1 className="mb-25 wow fadeInUp" data-wow-delay=".2s">
                 Fur-ends
               </h1>
-              <div className="input-group rounded">
-                <input
-                  type="search"
-                  className="form-control rounded"
-                  placeholder="Search"
-                  aria-label="Search"
-                  aria-describedby="search-addon"
-                  onChange={(event) => {
-                    setQuery(event.target.value);
-                  }}
-                />
-              </div>
+              <Searchbar setQuery={setQuery} />
               <br />
               Type:
-              <select
-                className="form-select"
-                onChange={(event) => {
-                  setType(event.target.value);
-                }}
-              >
-                <option value="" selected>
-                  All
-                </option>
-                <option value="Cat">Cat</option>
-                <option value="Dog">Dog</option>
-                <option value="Rabbit">Rabbit</option>
-              </select>
+              <Selectorcode setType={setType} />
             </div>
           </div>
         </div>
